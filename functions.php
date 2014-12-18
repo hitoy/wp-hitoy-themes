@@ -96,7 +96,7 @@ function asyn_loading_comments(){
 		if($comments){
 			$jsondata=array();
 			foreach($comments as $comment){
-				$comment_arr=['cid'=>$comment->comment_ID,'curl'=>$comment->comment_author_url,'cauthor'=>$comment->comment_author,'cdate'=>$comment->comment_date,'content'=>$comment->comment_content,'avatar'=>get_avatar($comment,96)];
+				$comment_arr= array('cid'=>$comment->comment_ID,'curl'=>$comment->comment_author_url,'cauthor'=>$comment->comment_author,'cdate'=>$comment->comment_date,'content'=>$comment->comment_content,'avatar'=>get_avatar($comment,96));
 				array_push($jsondata,$comment_arr);
 			}
 			echo json_encode($jsondata);
