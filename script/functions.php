@@ -61,7 +61,7 @@ function defalutmenu(){
 //代码展示插件
 function code_show($content){
     $content=str_replace("&#038;","&",$content);
-    $exp="/(<pre[^>]*>)([\s\S]*?)<\/pre>/i";
+    $exp="/(<pre[^>]*>)([\s\S]*?)(?=<\/pre>)(<\/pre>)/i";
     if(preg_match_all($exp,$content,$matches)){
         foreach ($matches[2] as $match){
             $codehtml=htmlspecialchars($match);
@@ -145,15 +145,12 @@ function the_description(){
     }else if(is_single()||is_page()){
         if ($post->post_excerpt) {
             $description =$post->post_excerpt;
-        }else {
+        } else {
             global $post;
             $content=$post->post_content;
             $description = str_replace("\n","",mb_strimwidth(strip_tags($content),0,180));
         }
-        echo '<meta name="description" content="'.htmlspecialchars($description).'"/>'."\n";
-    }else if(is_category()){
-	$description = get_the_category()->category_description;
-	if(!empty($description)) echo '<meta name="description" content="'.$description.'"/>'."\n";
+        echo '<meta name="description" content="'.$description.'"/>'."\n";
     }
 }
 
@@ -227,14 +224,13 @@ function comment_multistage_display($comment_pid,$count){
 function comment_redirect(){
     return false;
 }
-
 //垃圾留言验证:基于JS时间
 function comment_verify($commentdata){
     $postdate=isset($_POST['verification'])?$_POST['verification']:0;
     $postdate=round($postdate/1000);
     $nowdate=time();
     $lag=$nowdate-$postdate;
-    if(($lag > 86400 || $lag < -86400) && !is_user_logged_in()){
+    if($lag > 86400 || $lag < -86400 ){
         wp_die("You have been banned for commenting, Please try again later!","Prohibit Access",array('response'=>403));
     }
     return array_map('htmlspecialchars',$commentdata);

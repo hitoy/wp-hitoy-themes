@@ -119,7 +119,7 @@ a.external{background:url(./images/External_link.png) no-repeat right center;pad
 h1.category {margin:10px 0 -10px 10px;padding:10px 0 0 0;}
 #comments .more_comments {width:100%;height:30px;line-height:24px;text-align:center;color:#333;cursor:pointer;margin:20px 0;}
 /****code display***/
-.main .content pre {width:100%;word-wrap:break-word}
+.main .content pre {width:100%;word-wrap:break-word;margin-bottom:15px}
 .content .codebox ul.codedisplay {border:1px solid #bbb;border-right:none;padding-left:38px;margin-left:5px;font-size:12px;background:#f0f0f0}
 .content .codebox ul.codedisplay li {line-height:20px;list-style:decimal-leading-zero outside;padding-left:10px;border-left:3px solid #6CE26C;color:#bbb}
 .content .codebox ul.codedisplay li code{color:#000}

@@ -12,7 +12,7 @@
 			<div class="info">
 				<span class="date"><?php the_time(__('Y-m-d')) ?></span>
 				<span class="comments"><?php comments_popup_link()?></span>
-				<span class="views"><?php post_views(get_the_ID());?>次阅读</span>
+				<span class="views"><?php post_views(get_the_ID());?></span>
 				<a class="more" href="<?php the_permalink()?>"><?php _e('Read more...')?></a>
 			</div>
 		</div>

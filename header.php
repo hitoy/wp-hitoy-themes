@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="<?php echo WPLANG;?>">
+<html <?php language_attributes();?>>
 <head>
 <meta charset="<?php bloginfo('charset');?>">
 <title><?php if(is_home()&&!is_paged()){
@@ -22,8 +22,9 @@
 ?></title>
 <?php the_keywords();?>
 <?php the_description();?>
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css"/>
-<script type="text/javascript" data-main="<?php bloginfo('template_url'); ?>/script/hitoy" src="<?php bloginfo('template_url'); ?>/script/require.js" defer async="async"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css?v=1"/>
+<script type="text/javascript" data-main="<?php bloginfo('template_url'); ?>/script/hitoy" src="<?php bloginfo('template_url'); ?>/script/require.js?v=2.1.11" defer async="async"></script>
 </head>
 <body>
 <div class="head">

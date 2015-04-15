@@ -5,7 +5,7 @@
 		<div class="post" id="post-<?php the_ID(); ?>">
 		<h2><a class="title" href="<?php the_permalink();?>" rel="bookmark"><?php the_title();?></a></h2>
 		<div class="description">
-		<?php the_content('',FALSE,''); ?>	
+		<?php the_content(''); ?>	
 		</p>
 			</div>
 			<div class="info">
